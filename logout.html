@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logout - Security Awareness</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dark.css">
+</head>
+<body>
+<header>
+    <h1>Logging out...</h1>
+</header>
+
+<div class="container">
+    <div class="card">
+        <p>You are being logged out. If this page does not redirect, click below.</p>
+        <button class="btn btn-primary" onclick="logoutUser()">Logout now</button>
+    </div>
+</div>
+
+<script src="darkmode.js"></script>
+<script src="auth.js"></script>
+<script>
+    // Auto-logout on load
+    logoutUser();
+</script>
+</body>
+</html>

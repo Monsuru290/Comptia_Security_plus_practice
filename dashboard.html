@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Security Awareness</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dark.css">
+    <style>
+        .div-class {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Dashboard</h1>
+    <div>
+        <button class="btn btn-secondary" onclick="window.location.href='leaderboard.html'">Leaderboard</button>
+        <button class="btn btn-secondary" onclick="window.location.href='certificate.html'">Certificate</button>
+        <button class="btn btn-secondary" onclick="window.location.href='settings.html'">Settings</button>
+        <button class="btn btn-primary" onclick="logoutUser()">Logout</button>
+        <button class="dark-toggle" onclick="toggleTheme()">🌓</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Welcome, <span id="user-name"></span></h2>
+        <p>Your training progress is shown below.</p>
+
+        <h3>Progress</h3>
+        <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <p id="progress-text"></p>
+    </div>
+
+    <div class="card">
+        <h3>Training Modules</h3>
+        <p>Select a module to begin or continue your training.</p>
+
+        <div class="div-class" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;">
+            <a class="card" href="domain_one.html">1 General Security Concepts (12%)</a>
+            <a class="card" href="domain_two.html">2 Threats, Vulnerabilities, and Mitigations (22%)</a>
+            <a class="card" href="domain_three.html">3 Security Architecture (18%)</a>
+            <a class="card" href="domain_four.html">4 Security Operations (28%)</a>
+            <a class="card" href="domain_five.html">5 Security Program Management and Oversight (20%)</a>
+           
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Your Badges</h3>
+        <div id="badge-container"></div>
+    </div>
+</div>
+
+<script src="darkmode.js"></script>
+<script src="auth.js"></script>
+<script src="progress.js"></script>
+<script src="badges.js"></script>
+
+<script>
+    const user = localStorage.getItem("currentUser");
+    if (!user) window.location.href = "login.html";
+
+    document.getElementById("user-name").innerText = user;
+
+    const progress = getProgress();
+    const percent = (progress.length / 10) * 100;
+
+    document.getElementById("progress-fill").style.width = percent + "%";
+    document.getElementById("progress-text").innerText =
+        progress.length + " / 10 modules completed";
+
+    const badges = getBadges();
+    const badgeContainer = document.getElementById("badge-container");
+
+    if (badges.length === 0) {
+        badgeContainer.innerHTML = "<p>No badges earned yet.</p>";
+    } else {
+        badges.forEach(b => {
+            const el = document.createElement("span");
+            el.className = "badge";
+            el.innerText = b;
+            badgeContainer.appendChild(el);
+        });
+    }
+</script>
+</body>
+</html>

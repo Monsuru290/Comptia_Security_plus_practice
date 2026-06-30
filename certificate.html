@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Certificate - Security Awareness</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dark.css">
+    <script>
+    if (!localStorage.getItem("currentUser")) {
+        window.location.href = "login.html";
+    }
+</script>
+</head>
+<body onload="loadCertificate()">
+
+<header>
+    <h1>Certificate</h1>
+    <div>
+        <button class="btn btn-secondary" onclick="window.location.href='dashboard.html'">Dashboard</button>
+        <button class="btn btn-primary" onclick="logoutUser()">Logout</button>
+        <button class="dark-toggle" onclick="toggleTheme()">🌓</button>
+    </div>
+</header>
+
+<div class="card name-setup">
+    <h2>Certificate Name Setup</h2>
+
+    <label>Enter the name you want on your certificate:</label>
+    <input type="text" id="cert-input-name" style="width:100%;padding:8px;margin:6px 0;">
+
+    <label>Enter your account password for authorization:</label>
+    <input type="password" id="cert-input-password" style="width:100%;padding:8px;margin:6px 0;">
+
+    <button id="save-cert-name-btn" class="btn btn-primary" onclick="authorizeCertificateName()">
+    Save Name
+</button>
+
+</div>
+
+<div id="cert-container" class="card" style="margin-top:20px;">
+    <div class="certificate" id="certificate-area">
+        <h1>Certificate of Completion</h1>
+        <p>This certifies that</p>
+        <h2 id="cert-name"></h2>
+        <p>has successfully completed the Security Awareness Training Program.</p>
+
+        <p>Date: <span id="cert-date"></span></p>
+        <p>Certificate ID: <span id="cert-id"></span></p>
+        <p style="margin-top:30px; font-size:14px; color:#555;">
+            Verified by <strong>Oladepo Cyber Academy</strong>
+        </p>
+    </div>
+
+    <button class="btn btn-primary" onclick="downloadCertificate()">Download Certificate</button>
+</div>
+
+    
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="darkmode.js"></script>
+<script src="auth.js"></script>
+<script src="certificate.js"></script>
+<script>
+    loadCertificate();
+</script>
+
+
+</body>
+</html>

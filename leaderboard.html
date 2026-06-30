@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaderboard - Security Awareness</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dark.css">
+</head>
+<body>
+<header>
+    <h1>Leaderboard</h1>
+    <div>
+        <button class="btn btn-secondary" onclick="window.location.href='dashboard.html'">Dashboard</button>
+        <button class="btn btn-primary" onclick="logoutUser()">Logout</button>
+        <button class="dark-toggle" onclick="toggleTheme()">🌓</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Top Performers</h2>
+        <table style="width:100%;border-collapse:collapse;margin-top:15px;">
+            <thead>
+                <tr style="background:skyblue;color:white;">
+                    <th style="padding:10px;">Rank</th>
+                    <th style="padding:10px;">User</th>
+                    <th style="padding:10px;">Score</th>
+                    <th style="padding:10px;">Date</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-body"></tbody>
+        </table>
+    </div>
+</div>
+
+<script src="darkmode.js"></script>
+<script src="auth.js"></script>
+<script src="leaderboard.js"></script>
+
+<script>
+    const board = getLeaderboard();
+    const body = document.getElementById("leaderboard-body");
+
+    if (board.length === 0) {
+        body.innerHTML = "<tr><td colspan='4' style='padding:10px;'>No scores yet.</td></tr>";
+    } else {
+        board.forEach((entry, index) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td style="padding:10px;">${index + 1}</td>
+                <td style="padding:10px;">${entry.user}</td>
+                <td style="padding:10px;">${entry.score}</td>
+                <td style="padding:10px;">${entry.date}</td>
+            `;
+            body.appendChild(row);
+        });
+    }
+</script>
+</body>
+</html>

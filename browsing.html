@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Safe Browsing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dark.css">
+</head>
+<body onload="loadQuestion()">
+<header>
+    <h1>Safe Browsing</h1>
+    <div>
+        <button class="btn btn-secondary" onclick="window.location.href='dashboard.html'">Dashboard</button>
+        <button class="dark-toggle" onclick="toggleTheme()">🌓</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Safe Internet Practices</h2>
+        <ul>
+            <li>Check for HTTPS</li>
+            <li>Avoid downloading from unknown sites</li>
+            <li>Beware of pop‑ups</li>
+            <li>Use updated browsers</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Quiz</h2>
+        <h3 id="question"></h3>
+        <div id="options"></div>
+    </div>
+</div>
+
+<script>
+    const moduleKey = "browsing";
+
+    const questions = [
+        {
+            q: "What does HTTPS indicate?",
+            a: ["Secure connection", "Faster internet", "Better graphics"],
+            correct: 0
+        },
+        {
+            q: "You should download software from:",
+            a: ["Random websites", "Official sources", "Pop‑up ads"],
+            correct: 1
+        },
+        {
+            q: "Pop‑ups asking to 'install updates' are usually:",
+            a: ["Safe", "Malicious", "Normal"],
+            correct: 1
+        }
+    ];
+</script>
+
+<script src="darkmode.js"></script>
+<script src="quiz.js"></script>
+<script src="progress.js"></script>
+<script src="badges.js"></script>
+<script>loadQuestion()</script>
+<script src="leaderboard.js"></script>
+</body>
+</html>

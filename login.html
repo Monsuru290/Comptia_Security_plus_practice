@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Security Awareness</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dark.css">
+</head>
+<body>
+<header>
+    <h1>Login</h1>
+    <div>
+        <button class="dark-toggle" onclick="toggleTheme()">🌓</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Sign in to your account</h2>
+        <div>
+            <label>Username</label><br>
+            <input type="text" id="log-username" style="width:100%;padding:8px;margin:6px 0;">
+        </div>
+        <div>
+            <label>Password</label><br>
+            <input type="password" id="log-password" style="width:100%;padding:8px;margin:6px 0;">
+        </div>
+        <button class="btn btn-primary" onclick="loginUser()">Login</button>
+        <p style="margin-top:10px;">
+            Don't have an account?
+            <a href="registration.html">Register here</a>
+        </p>
+    </div>
+</div>
+
+<script src="darkmode.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

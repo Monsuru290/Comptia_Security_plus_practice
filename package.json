@@ -1,0 +1,16 @@
+{
+  "name": "general-security-concepts",
+  "version": "2.0.0",
+  "description": "Browser-based practice exam for the Comptia Security+ Domain 1: General Security Concepts (12%) domain",
+  "scripts": {
+    "start": "npx serve -p 3000"
+  },
+  "keywords": ["comptia", "security", "cybersecurity", "practice-exam", "quiz", "ayinde"],
+  "author": "monsuru290",
+  "license": "MIT",
+  "homepage": "https://monsuru290.github.io/exam_prep_Comptia_Security+/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monsuru290/exam_prep_Comptia_Security+.git"
+  }
+}

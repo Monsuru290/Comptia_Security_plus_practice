@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings - Security Awareness</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dark.css">
+</head>
+<body>
+<header>
+    <h1>Settings</h1>
+    <div>
+        <button class="btn btn-secondary" onclick="window.location.href='dashboard.html'">Dashboard</button>
+        <button class="btn btn-primary" onclick="logoutUser()">Logout</button>
+        <button class="dark-toggle" onclick="toggleTheme()">🌓</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Theme</h2>
+        <button class="btn btn-primary" onclick="toggleTheme()">Toggle Dark Mode</button>
+    </div>
+
+    <div class="card">
+        <h2>Reset Progress</h2>
+        <button class="btn btn-secondary" onclick="resetProgress()">Reset All Progress</button>
+    </div>
+
+    <div class="card">
+        <h2>Reset Leaderboard</h2>
+        <button class="btn btn-secondary" onclick="resetLeaderboard()">Clear Leaderboard</button>
+    </div>
+</div>
+
+<script src="darkmode.js"></script>
+<script src="auth.js"></script>
+<script src="leaderboard.js"></script>
+<script src="progress.js"></script>
+
+<script>
+function resetProgress() {
+    if (confirm("Are you sure you want to reset all progress?")) {
+        localStorage.removeItem("progress");
+        alert("Progress reset.");
+    }
+}
+
+function resetLeaderboard() {
+    if (confirm("Clear leaderboard?")) {
+        localStorage.removeItem("leaderboard");
+        alert("Leaderboard cleared.");
+    }
+}
+</script>
+</body>
+</html>

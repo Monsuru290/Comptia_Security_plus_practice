@@ -1,0 +1,7 @@
+<svg width="180" height="180" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="90" fill="#d4af37" stroke="#b8860b" stroke-width="8"/>
+  <circle cx="100" cy="100" r="70" fill="#f7e199"/>
+  <text x="100" y="115" font-size="32" text-anchor="middle" fill="#b8860b" font-weight="bold">
+    ✔
+  </text>
+</svg>

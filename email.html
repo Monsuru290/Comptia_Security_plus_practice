@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Safety</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dark.css">
+</head>
+<body onload="loadQuestion()">
+<header>
+    <h1>Email Safety</h1>
+    <div>
+        <button class="btn btn-secondary" onclick="window.location.href='dashboard.html'">Dashboard</button>
+        <button class="dark-toggle" onclick="toggleTheme()">🌓</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Safe Email Practices</h2>
+        <ul>
+            <li>Verify sender identity</li>
+            <li>Do not open unknown attachments</li>
+            <li>Beware of urgent requests</li>
+            <li>Check for spelling errors</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Quiz</h2>
+        <h3 id="question"></h3>
+        <div id="options"></div>
+    </div>
+</div>
+
+<script>
+    const moduleKey = "email";
+
+    const questions = [
+        {
+            q: "You receive an unexpected attachment. What do you do?",
+            a: ["Open it", "Delete or report it", "Forward to friends"],
+            correct: 1
+        },
+        {
+            q: "Urgent emails demanding action are often:",
+            a: ["Normal", "Phishing attempts", "Friendly reminders"],
+            correct: 1
+        },
+        {
+            q: "Always verify:",
+            a: ["Sender address", "Font style", "Emoji count"],
+            correct: 0
+        }
+    ];
+</script>
+
+<script src="darkmode.js"></script>
+<script src="quiz.js"></script>
+<script src="progress.js"></script>
+<script src="badges.js"></script>
+<script src="leaderboard.js"></script>
+<script>loadQuestion()</script>
+</body>
+</html>

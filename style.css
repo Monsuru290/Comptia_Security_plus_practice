@@ -1,0 +1,167 @@
+/* ===== GLOBAL RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f6f9;
+    color: #1a1a1a;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: skyblue;
+    color: white;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+header button {
+    background: white;
+    color: #0a63c2;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* ===== MAIN CONTENT ===== */
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* ===== CARDS ===== */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #d9d9d9;
+    margin-bottom: 20px;
+    transition: 0.2s;
+
+}
+
+a.card{
+    color:white;
+    text-decoration: none;
+    text-align: center;
+    background:skyblue
+}
+.card:hover {
+    border-color: skyblue;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: white;
+    color: skyblue;
+}
+
+.btn-secondary {
+    background: #e6e6e6;
+    color: #333;;
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-bar {
+    width: 100%;
+    height: 14px;
+    background: #d9e6f7;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: skyblue;
+    transition: width 0.4s ease;
+}
+
+/* ===== QUIZ ===== */
+.quiz-option {
+    padding: 12px;
+    background: #f9f9f9;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.quiz-option:hover {
+    background: #e8f1ff;
+    border-color: skyblue;
+}
+
+/* ===== CERTIFICATE ===== */
+.certificate {
+    background: white;
+    padding: 40px;
+    border: 3px solid skyblue;
+    border-radius: 12px;
+    text-align: center;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.certificate h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.certificate p {
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+/* ===== BADGES ===== */
+.badge {
+    display: inline-block;
+    padding: 10px 14px;
+    background: skyblue;
+    color: white;
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+/* ===== DARK MODE TOGGLE ===== */
+.dark-toggle {
+    cursor: pointer;
+    font-size: 18px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: white;
+    color: #0a63c2;
+}
+
+/* Force white background during certificate capture */
+.certificate.capture-mode {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: none !important;
+}
